@@ -10,6 +10,7 @@ import { DatabaseModule } from './infra/modules/database.module';
     DatabaseModule,
     ProductsModule,
     GraphQLModule.forRoot<ApolloDriverConfig>({
+      csrfPrevention: true,
       driver: ApolloDriver,
       autoSchemaFile: 'schema.gql',
       sortSchema: true,
