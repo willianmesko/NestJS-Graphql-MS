@@ -25,14 +25,12 @@ COPY --from=build /usr/src/app/ ./dist
 
 COPY package*.json ./
 
-RUN npm install -g pm2
-
 RUN npm install --only=production
 
 RUN rm package*.json
 
 EXPOSE 3000
 
-CMD ["pm2 start", "dist/main.js"]
+CMD ["node", "dist/main.js"]
 
 
